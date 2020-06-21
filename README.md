@@ -1,17 +1,15 @@
-## Universal Render Pipeline Kawase Blur Renderer Extension
+## Universal Render Pipeline UI Blur Renderer Extension
 
-This is a experimental RenderFeature implementation aiming to show multiple things:
-* PostProcessing "like" effect in URP using ScriptableRenderFeatures
-* how to render multiple passes using CommandBuffers in RenderFeatures
-* how to do a simple yet effective blur, based on the Kawase blur as described in this [article](https://software.intel.com/en-us/blogs/2014/07/15/an-investigation-of-fast-real-time-gpu-based-image-blur-algorithms).
+[sebastianhein](https://github.com/sebastianhein)'s [urp_kawase_blur](https://github.com/sebastianhein/urp_kawase_blur) implementation is a great example of an efficient blur implementation as a Renderer Extension. It however doesn't work well with UI elements. This fork is intended as an example on how it can be extended for this purpose. 
 
-Features:
-* flexible downscaling
-* variable number of blur passes
-* store result in a temporary texture of blit to the current framebuffer
-* simple milky-glass demo
+Usage:
+* Add Kawase blur to your Renderer Features of your Forward Renderer asset
+* Set the Render Pass Event to after Rendering
+* Select the UIBlur material for any UI sprite you want to have a blurred background
 
-This is how it looks.
-![This is how it looks if the image appears.](blur.png)
+Limitations:
+* This implementation does not yet support blurring UI elements themselves
+
+![Preview of the effect](blur.png)
 
 Developed with Unity 2019.3
