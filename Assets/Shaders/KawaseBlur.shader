@@ -51,7 +51,7 @@
                 float2 res = _MainTex_TexelSize.xy;
                 float i = _offset;
     
-                fixed4 col;                
+                fixed4 col = fixed4(1, 1, 1, 1);
                 col.rgb = tex2D( _MainTex, input.uv ).rgb;
                 col.rgb += tex2D( _MainTex, input.uv + float2( i, i ) * res ).rgb;
                 col.rgb += tex2D( _MainTex, input.uv + float2( i, -i ) * res ).rgb;
